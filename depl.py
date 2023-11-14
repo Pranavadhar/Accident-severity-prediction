@@ -3,12 +3,9 @@ import pickle
 
 
 def make_prediction(Sex_of_driver, Number_of_vehicles_involved, Number_of_casualties):
-    with open("rars.pkl", "rb") as f:
-        clf = pickle.load(f)
-        preds = clf.predict(
-            [[Sex_of_driver, Number_of_vehicles_involved, Number_of_casualties]])
-        print(preds)
-        return preds
+    preds = clf.predict([[Sex_of_driver, Number_of_vehicles_involved, Number_of_casualties]])
+    print(preds)
+    return preds
 
 # Create the input component for Gradio since we are expecting 4 inputs
 
